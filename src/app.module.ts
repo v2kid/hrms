@@ -1,11 +1,7 @@
 import { Module } from '@nestjs/common';
-<<<<<<< HEAD
 import { MongooseModule } from '@nestjs/mongoose';
-=======
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { MongooseModule } from '@nestjs/mongoose';
 
->>>>>>> e1fce1da60d94939e5010fa11814f4df25e363bb
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
@@ -22,7 +18,6 @@ import { TalentModule } from './hero/talent.module';
 import { HeroesModule } from './hero/heroes/heroes.module';
 @Module({
   imports: [
-<<<<<<< HEAD
     MongooseModule.forRootAsync({
       useFactory: () => ({
         uri: 'mongodb://localhost:27017/nest',
@@ -48,18 +43,6 @@ import { HeroesModule } from './hero/heroes/heroes.module';
     UserService,
   
   ],
-=======
-    ConfigModule.forRoot(),
-    MongooseModule.forRootAsync({
-      imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: async (config: ConfigService) => ({
-        uri: config.get<string>('MONGODB_URI'), // Loaded from .ENV
-      }),
-    }),
-  ],
-  controllers: [AppController],
-  providers: [AppService],
->>>>>>> e1fce1da60d94939e5010fa11814f4df25e363bb
+
 })
 export class AppModule {}
