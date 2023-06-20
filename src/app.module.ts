@@ -16,11 +16,13 @@ import { GoogleModule } from './googleauth/google.module';
 import { ContactsModule } from './contacts/contacts.module';
 import { TalentModule } from './hero/talent.module';
 import { HeroesModule } from './hero/heroes/heroes.module';
+const uri = "mongodb+srv://vgiakhang:<password>@cluster0.mqh8snx.mongodb.net/?retryWrites=true&w=majority";
+
 @Module({
   imports: [
     MongooseModule.forRootAsync({
       useFactory: () => ({
-        uri: 'mongodb://localhost:27017/nest',
+        uri: 'mongodb+srv://vgiakhang:chanhonua1@cluster0.mqh8snx.mongodb.net/nest',
       }),
     }),
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
